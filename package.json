@@ -1,0 +1,25 @@
+{
+  "name": "ahj-helpdesk-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "14.16.1",
+    "npm": "6.14.12"
+  },
+  "scripts": {
+    "start": "node index",
+    "start:dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theart84/ahj-helpdesk-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theart84/ahj-helpdesk-backend/issues"
+  },
+  "homepage": "https://github.com/theart84/ahj-helpdesk-backend#readme"
+}
