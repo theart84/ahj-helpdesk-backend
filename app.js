@@ -58,13 +58,14 @@ app.use(async ctx => {
       return;
     case 'updateById':
       const updateIdx = tickets.findIndex(ticket => ticket.id === id);
+      const updateData = JSON.parse(ctx.request.body)
       const ticket = {
         ...tickets[updateIdx],
-        ...ctx.request.body
+        ...updateData
       }
-      tickets.splice(updateIdx, 1)
-      tickets[updateIdx] = ticket;
-      ctx.response.body = tickets[updateIdx];
+      tickets.splice(updateIdx, 1);
+      tickets.splice(updateIdx, 0, ticket);
+      ctx.response.body = tickets;
       return;
     default:
       ctx.response.status = 404;
