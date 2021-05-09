@@ -41,15 +41,16 @@ app.use(async ctx => {
       ctx.response.body = tickets.find(ticket => ticket.id === id)
       return;
     case 'createTicket':
+      const createData = JSON.parse(ctx.request.body)
       const newTicket = {
         id: idGenerator.generateGUID(),
-        name: ctx.request.body.name,
+        name: createData.name,
         status: false,
-        description: ctx.request.body.description || '',
+        description: createData.description || '',
         created: Date.now()
       };
       tickets.push(newTicket);
-      ctx.response.body = newTicket
+      ctx.response.body = [newTicket]
       return;
     case 'deleteById':
       const deleteIdx = tickets.findIndex(ticket => ticket.id === id)
